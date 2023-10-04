@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lista de Produtos</title>
+  <link rel="stylesheet" type="text/css" href="/static/appDjango/styles/estilos.css" />
+</head>
+<body>
+
+    <h1>Estoque</h1>
+    <div class="estoque">
+    <table>
+      <tr>
+        <th>Produto</th>
+        <th>Descrição</th>
+        <th>Quantidade</th>
+        </tr>
+        {% for produto in produtos %}
+        <tr>
+          <td>{{ produto.nome }}</td>
+          <td>{{ produto.descricao }}</td>
+          <td>{{ produto.quantidade }}</td>
+        </tr>
+        {% endfor %}
+        </table>
+
+        <a href="{% url 'adicionarEstoque' %}">Adicionar Produto</a>
+        
+        <a href="/produtos/excluir">Excluir Produto</a>
+  </div>
+
+</body>
+</html>
