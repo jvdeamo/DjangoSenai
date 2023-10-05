@@ -1,0 +1,20 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <title>Lista de Produtos</title>
+  <link rel="stylesheet" href="{% static 'appDjango/css/excluirP.css' %}">
+  </head>
+<body>
+  <h1>Excluir Produto</h1>
+  <form action="{% url 'estoqueLoja' %}" method="post">
+    {% csrf_token %}
+    <p>Tem certeza que deseja excluir o produto "{{ produto.nome }}"?</p>
+    <input type="submit" value="Excluir">
+    <input type="hidden" name="excluido" value="True">
+    <a href=" {% url 'estoqueLoja' %} ">Não</a>
+  </form>
+
+</body>
+</html>

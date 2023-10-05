@@ -1,0 +1,61 @@
+/* Estilo para o cabeçalho */
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Estilo para o formulário */
+form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 300px;
+}
+
+/* Estilo para a etiqueta do campo de entrada */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+}
+
+/* Estilo para o campo de entrada de texto */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Estilo para o botão de envio */
+input[type="submit"] {
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Estilo para o botão de envio quando hover */
+input[type="submit"]:hover {
+    background-color: #c82333;
+}
+a{
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+}

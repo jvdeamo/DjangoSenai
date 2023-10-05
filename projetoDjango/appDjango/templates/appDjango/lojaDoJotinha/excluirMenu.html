@@ -1,0 +1,21 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes Produto</title>
+    <link rel="stylesheet" href="{% static 'appDjango/css/excluirP.css' %}">
+  
+</head>
+
+<body>
+    <h1> Menu exclusão de produtos </h1>
+    <form action="{% url 'excluirProduto' %}" method="post">
+        {% csrf_token %}
+        <label> Insira o ID do produto a ser excluído: </label>
+        <input type="text" name="id">
+        <input type="submit" value="Excluir">
+    </form>
+</body>
+</html>

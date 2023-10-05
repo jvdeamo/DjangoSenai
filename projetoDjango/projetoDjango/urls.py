@@ -26,4 +26,5 @@ urlpatterns = [
     path('loja/adicionar', views.adicionarEstoque, name='adicionarEstoque'),
     path('loja/info/<int:id>', views.infoEstoque, name='infoEstoque'),
     path('loja/editar/<int:id>', views.editarEstoque, name='editarEstoque'),
+    path('loja/excluir/<int:id>', views.excluirProduto, name='excluirProduto'),
 ]

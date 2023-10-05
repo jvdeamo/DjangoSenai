@@ -1,6 +1,6 @@
-from django.shortcuts import get_object_or_404, render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.http import HttpResponse
-from .forms import EstoqueForm
+from .forms import ItemEstoqueForm, EstoqueForm
 from .models import Estoque
 
 # Create your views here.
@@ -37,8 +37,9 @@ def adicionarEstoque(request):
 
 
 def infoEstoque(request, id):
-    produto = Estoque.objects.get(id=id)
-    return render(request, 'appDjango/lojaDoJotinha/detalhesProduto.html', {'produto': produto})
+    item = get_object_or_404(Estoque, id=id)  # Obtém o item com o ID fornecido
+    return render(request, "appDjango/lojaDoJotinha/detalhesProduto.html", {"produto": item})
+
 
 
 def editarEstoque(request, id):
@@ -52,3 +53,12 @@ def editarEstoque(request, id):
     else:
         produto_form = EstoqueForm(instance=produto)
     return render(request, 'appDjango/lojaDoJotinha/editarProduto.html', {'produto_form': produto_form, 'produto': produto})
+
+
+def excluirProduto(request, id):
+    produto = get_object_or_404(Estoque, id=id)
+    produto.delete()
+
+    if request.method == 'POST':
+        return redirect('estoqueLoja')
+    return render(request, 'appDjango/lojaDoJotinha/excluirProduto.html', {'produto': produto})
